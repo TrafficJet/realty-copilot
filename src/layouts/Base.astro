@@ -25,14 +25,10 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="theme-color" content="#16a34a" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T1HYTYT5NF"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-T1HYTYT5NF');
-    </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   </head>
   <body class="bg-white text-gray-900 min-h-screen flex flex-col">
     <!-- Header -->
@@ -139,6 +135,13 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
         menu?.classList.toggle('hidden', isOpen);
         btn.setAttribute('aria-expanded', String(!isOpen));
       });
+    </script>
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-T1HYTYT5NF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T1HYTYT5NF');
     </script>
   </body>
 </html>
