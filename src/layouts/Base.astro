@@ -1,0 +1,131 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+}
+
+const { title, description, canonical } = Astro.props;
+const siteUrl = 'https://realtycopilot.app';
+const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="bg-white text-gray-900 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a href="/" class="flex items-center gap-2 text-green-600 font-bold text-xl hover:text-green-700 transition-colors">
+            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+            </svg>
+            RealtyCopilot
+          </a>
+
+          <!-- Desktop Nav -->
+          <nav class="hidden md:flex items-center gap-6" aria-label="Main navigation">
+            <a href="/mortgage-calculator/" class="text-sm font-medium text-gray-600 hover:text-green-600 transition-colors">
+              Mortgage Calc
+            </a>
+            <a href="/affordability-calculator/" class="text-sm font-medium text-gray-600 hover:text-green-600 transition-colors">
+              Affordability
+            </a>
+            <a href="/cap-rate-calculator/" class="text-sm font-medium text-gray-600 hover:text-green-600 transition-colors">
+              Cap Rate
+            </a>
+            <a href="/rent-vs-buy-calculator/" class="text-sm font-medium text-gray-600 hover:text-green-600 transition-colors">
+              Rent vs Buy
+            </a>
+          </nav>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden p-2 rounded-md text-gray-600 hover:text-green-600 hover:bg-gray-100 transition-colors"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Nav -->
+        <nav id="mobile-menu" class="md:hidden hidden pb-4" aria-label="Mobile navigation">
+          <div class="flex flex-col gap-1 pt-2 border-t border-gray-100">
+            <a href="/mortgage-calculator/" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-green-600 hover:bg-green-50 transition-colors">
+              Mortgage Calculator
+            </a>
+            <a href="/affordability-calculator/" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-green-600 hover:bg-green-50 transition-colors">
+              Affordability Calculator
+            </a>
+            <a href="/cap-rate-calculator/" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-green-600 hover:bg-green-50 transition-colors">
+              Cap Rate Calculator
+            </a>
+            <a href="/rent-vs-buy-calculator/" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-green-600 hover:bg-green-50 transition-colors">
+              Rent vs Buy Calculator
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 mt-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-2 text-white font-semibold">
+            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+            </svg>
+            RealtyCopilot.app
+          </div>
+          <p class="text-sm">&copy; 2025 RealtyCopilot.app. All rights reserved.</p>
+          <nav class="flex items-center gap-4 text-sm" aria-label="Footer navigation">
+            <a href="/privacy/" class="hover:text-white transition-colors">Privacy</a>
+            <span aria-hidden="true">|</span>
+            <a href="/terms/" class="hover:text-white transition-colors">Terms</a>
+          </nav>
+        </div>
+        <p class="text-xs text-center text-gray-600 mt-6">
+          RealtyCopilot calculators are for educational purposes only and do not constitute financial advice.
+          Always consult a licensed professional before making real estate decisions.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      btn?.addEventListener('click', () => {
+        const isOpen = !menu?.classList.contains('hidden');
+        menu?.classList.toggle('hidden', isOpen);
+        btn.setAttribute('aria-expanded', String(!isOpen));
+      });
+    </script>
+  </body>
+</html>

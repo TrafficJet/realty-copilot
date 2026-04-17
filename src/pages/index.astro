@@ -1,0 +1,167 @@
+---
+import Base from '../layouts/Base.astro';
+
+const tools = [
+  {
+    title: 'Mortgage Calculator',
+    description: 'Calculate your monthly mortgage payment, total interest, and full amortization schedule for any home loan.',
+    href: '/mortgage-calculator/',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/>`,
+    badge: 'Most Popular',
+  },
+  {
+    title: 'Affordability Calculator',
+    description: "Find out how much house you can afford based on your income, debts, and down payment using the 28/36 rule.",
+    href: '/affordability-calculator/',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>`,
+    badge: null,
+  },
+  {
+    title: 'Cap Rate Calculator',
+    description: 'Analyze rental property investments with Net Operating Income, cap rate, and cash-on-cash return calculations.',
+    href: '/cap-rate-calculator/',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>`,
+    badge: 'Investors',
+  },
+  {
+    title: 'Rent vs Buy Calculator',
+    description: 'Compare the true long-term costs of renting versus buying to make the right decision for your situation.',
+    href: '/rent-vs-buy-calculator/',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>`,
+    badge: null,
+  },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "RealtyCopilot",
+  "url": "https://realtycopilot.app",
+  "description": "Free real estate calculators for US home buyers, sellers, and investors.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://realtycopilot.app/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+---
+
+<Base
+  title="Free Real Estate Calculators | RealtyCopilot"
+  description="Free mortgage calculator, affordability calculator, cap rate calculator, and rent vs buy calculator. Make smarter property decisions with RealtyCopilot."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} slot="head" />
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-green-50 to-emerald-100 py-16 sm:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight">
+        Free Real Estate Calculators
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+        Make smarter property decisions with accurate mortgage, affordability, and investment calculators.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a
+          href="/mortgage-calculator/"
+          class="inline-flex items-center px-6 py-3 rounded-lg bg-green-600 text-white font-semibold hover:bg-green-700 transition-colors shadow-md"
+        >
+          Try Mortgage Calculator
+        </a>
+        <a
+          href="/affordability-calculator/"
+          class="inline-flex items-center px-6 py-3 rounded-lg bg-white text-green-700 font-semibold border border-green-300 hover:bg-green-50 transition-colors"
+        >
+          Check Affordability
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tool Cards -->
+  <section class="py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900">All Calculators</h2>
+        <p class="mt-3 text-gray-500">Free tools built for US real estate — no sign-up required.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+        {tools.map((tool) => (
+          <a
+            href={tool.href}
+            class="relative group bg-white rounded-2xl border border-gray-200 p-6 hover:border-green-400 hover:shadow-lg transition-all duration-200"
+          >
+            {tool.badge && (
+              <span class="absolute top-4 right-4 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-100 text-green-700">
+                {tool.badge}
+              </span>
+            )}
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-green-50 group-hover:bg-green-100 flex items-center justify-center transition-colors">
+                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <Fragment set:html={tool.icon} />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 group-hover:text-green-700 transition-colors">
+                  {tool.title}
+                </h3>
+                <p class="mt-1.5 text-sm text-gray-500 leading-relaxed">
+                  {tool.description}
+                </p>
+              </div>
+            </div>
+            <div class="mt-4 flex items-center text-sm font-medium text-green-600 group-hover:text-green-700">
+              Open calculator
+              <svg class="ml-1.5 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust section -->
+  <section class="bg-gray-50 py-14">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-extrabold text-green-600">100% Free</p>
+          <p class="mt-2 text-sm text-gray-500">No sign-up, no credit card, no hidden fees</p>
+        </div>
+        <div>
+          <p class="text-3xl font-extrabold text-green-600">Accurate</p>
+          <p class="mt-2 text-sm text-gray-500">Standard US mortgage formulas and guidelines</p>
+        </div>
+        <div>
+          <p class="text-3xl font-extrabold text-green-600">Instant</p>
+          <p class="mt-2 text-sm text-gray-500">Results update in real-time as you type</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ / About -->
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Why Use RealtyCopilot?</h2>
+      <div class="prose prose-gray max-w-none text-gray-600 space-y-4">
+        <p>
+          Buying a home is the largest financial decision most Americans make. RealtyCopilot gives you the
+          same professional-grade calculations used by loan officers and real estate agents — completely free.
+        </p>
+        <p>
+          Whether you're a first-time buyer trying to figure out your budget, a homeowner comparing
+          refinance options, or an investor evaluating a rental property, our calculators give you
+          the numbers you need instantly.
+        </p>
+        <p>
+          All calculations use standard US mortgage formulas. Results are estimates for educational
+          purposes — always confirm final figures with your lender or financial advisor.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

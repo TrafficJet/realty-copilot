@@ -1,0 +1,350 @@
+---
+import Base from '../layouts/Base.astro';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Cap Rate Calculator",
+  "url": "https://realtycopilot.app/cap-rate-calculator/",
+  "description": "Calculate cap rate, net operating income, and cash-on-cash return for rental property investments.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+---
+
+<Base
+  title="Cap Rate Calculator — Rental Property Investment Analysis | RealtyCopilot"
+  description="Free cap rate calculator for real estate investors. Calculate net operating income (NOI), capitalization rate, and cash-on-cash return for any rental property."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+
+    <!-- Page header -->
+    <div class="mb-8">
+      <nav class="text-sm text-gray-400 mb-3" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-green-600">Home</a>
+        <span class="mx-2">/</span>
+        <span class="text-gray-600">Cap Rate Calculator</span>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Cap Rate Calculator</h1>
+      <p class="mt-2 text-gray-500 text-lg">Analyze rental property investment returns with NOI and cap rate.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+
+      <!-- Inputs -->
+      <div class="lg:col-span-2 space-y-5">
+
+        <!-- Property -->
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 space-y-5">
+          <h2 class="text-base font-semibold text-gray-700 uppercase tracking-wide">Property</h2>
+
+          <div>
+            <label for="cr-value" class="block text-sm font-medium text-gray-700 mb-1">Property Value / Purchase Price</label>
+            <div class="relative">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">$</span>
+              <input
+                type="number"
+                id="cr-value"
+                value="350000"
+                min="0"
+                step="5000"
+                class="w-full pl-7 pr-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="cr-down" class="block text-sm font-medium text-gray-700 mb-1">Down Payment</label>
+            <div class="relative">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">$</span>
+              <input
+                type="number"
+                id="cr-down"
+                value="70000"
+                min="0"
+                step="5000"
+                class="w-full pl-7 pr-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              />
+            </div>
+            <p class="text-xs text-gray-400 mt-1">Used for cash-on-cash return calculation</p>
+          </div>
+        </div>
+
+        <!-- Income -->
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 space-y-5">
+          <h2 class="text-base font-semibold text-gray-700 uppercase tracking-wide">Annual Income</h2>
+
+          <div>
+            <label for="cr-rent" class="block text-sm font-medium text-gray-700 mb-1">Gross Rental Income</label>
+            <div class="relative">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">$</span>
+              <input
+                type="number"
+                id="cr-rent"
+                value="30000"
+                min="0"
+                step="500"
+                class="w-full pl-7 pr-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              />
+            </div>
+            <p class="text-xs text-gray-400 mt-1">Monthly rent × 12</p>
+          </div>
+
+          <div>
+            <label for="cr-vacancy" class="block text-sm font-medium text-gray-700 mb-1">Vacancy Rate</label>
+            <div class="relative">
+              <input
+                type="number"
+                id="cr-vacancy"
+                value="5"
+                min="0"
+                max="100"
+                step="0.5"
+                class="w-full pl-4 pr-8 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              />
+              <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Expenses -->
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 space-y-5">
+          <h2 class="text-base font-semibold text-gray-700 uppercase tracking-wide">Annual Expenses</h2>
+
+          <div>
+            <label for="cr-taxes" class="block text-sm font-medium text-gray-700 mb-1">Property Taxes</label>
+            <div class="relative">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">$</span>
+              <input type="number" id="cr-taxes" value="4200" min="0" step="100"
+                class="w-full pl-7 pr-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="cr-insurance" class="block text-sm font-medium text-gray-700 mb-1">Insurance</label>
+            <div class="relative">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">$</span>
+              <input type="number" id="cr-insurance" value="1800" min="0" step="100"
+                class="w-full pl-7 pr-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="cr-maintenance" class="block text-sm font-medium text-gray-700 mb-1">Maintenance & Repairs</label>
+            <div class="relative">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">$</span>
+              <input type="number" id="cr-maintenance" value="3000" min="0" step="100"
+                class="w-full pl-7 pr-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="cr-mgmt" class="block text-sm font-medium text-gray-700 mb-1">Property Management</label>
+            <div class="relative">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">$</span>
+              <input type="number" id="cr-mgmt" value="2400" min="0" step="100"
+                class="w-full pl-7 pr-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              />
+            </div>
+            <p class="text-xs text-gray-400 mt-1">~8–10% of rent if using a manager</p>
+          </div>
+
+          <div>
+            <label for="cr-other" class="block text-sm font-medium text-gray-700 mb-1">Other Expenses</label>
+            <div class="relative">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">$</span>
+              <input type="number" id="cr-other" value="600" min="0" step="100"
+                class="w-full pl-7 pr-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="lg:col-span-3 space-y-5">
+
+        <!-- Cap Rate hero -->
+        <div class="bg-green-600 rounded-2xl p-6 text-white">
+          <p class="text-sm font-medium text-green-100">Capitalization Rate</p>
+          <p id="cr-cap-rate" class="text-5xl font-extrabold mt-1 tracking-tight">—</p>
+          <p id="cr-cap-verdict" class="text-sm text-green-200 mt-1">NOI ÷ Property Value</p>
+        </div>
+
+        <!-- Metric grid -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white rounded-2xl border border-gray-200 p-5">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Gross Rental Income</p>
+            <p id="cr-gross-income" class="text-2xl font-bold text-gray-900 mt-1">—</p>
+            <p class="text-xs text-gray-400 mt-0.5">After vacancy</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-200 p-5">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Total Expenses</p>
+            <p id="cr-total-expenses" class="text-2xl font-bold text-gray-900 mt-1">—</p>
+            <p class="text-xs text-gray-400 mt-0.5">Annual operating costs</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-200 p-5">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Net Operating Income</p>
+            <p id="cr-noi" class="text-2xl font-bold text-gray-900 mt-1">—</p>
+            <p class="text-xs text-gray-400 mt-0.5">Income − expenses</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-200 p-5">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Cash-on-Cash Return</p>
+            <p id="cr-coc" class="text-2xl font-bold text-gray-900 mt-1">—</p>
+            <p class="text-xs text-gray-400 mt-0.5">NOI ÷ down payment</p>
+          </div>
+        </div>
+
+        <!-- Expense breakdown -->
+        <div class="bg-white rounded-2xl border border-gray-200 p-6">
+          <h2 class="text-sm font-semibold text-gray-700 uppercase tracking-wide mb-4">Expense Breakdown</h2>
+          <div id="cr-expense-list" class="space-y-2 text-sm"></div>
+          <div class="mt-4 pt-4 border-t border-gray-100 flex justify-between font-semibold">
+            <span class="text-gray-700">Total Annual Expenses</span>
+            <span id="cr-expense-total" class="text-gray-900">—</span>
+          </div>
+        </div>
+
+        <!-- Benchmark -->
+        <div class="bg-white rounded-2xl border border-gray-200 p-6">
+          <h2 class="text-sm font-semibold text-gray-700 uppercase tracking-wide mb-3">Cap Rate Benchmarks</h2>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between">
+              <span class="text-gray-500">Below 4%</span>
+              <span class="text-gray-600 font-medium">Low return — often Class A urban properties</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-500">4% – 6%</span>
+              <span class="text-gray-600 font-medium">Moderate — stable markets</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-green-600 font-semibold">6% – 8%</span>
+              <span class="text-green-700 font-semibold">Good — target range for most investors</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-500">8% – 10%</span>
+              <span class="text-gray-600 font-medium">High — may indicate higher risk</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-500">Above 10%</span>
+              <span class="text-gray-600 font-medium">Very high — investigate risk factors</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Explanation -->
+    <article class="mt-14 prose prose-gray max-w-4xl">
+      <h2 class="text-2xl font-bold text-gray-900">What Is Cap Rate?</h2>
+      <p class="text-gray-600">
+        The capitalization rate (cap rate) is the most widely used metric in commercial and residential
+        real estate investing. It tells you the expected annual return on a property as if you paid all
+        cash — independent of financing.
+      </p>
+
+      <h3 class="text-lg font-semibold text-gray-800 mt-6">The Formula</h3>
+      <p class="text-gray-600">
+        <strong>Cap Rate = Net Operating Income (NOI) ÷ Property Value</strong>
+      </p>
+      <p class="text-gray-600">
+        NOI = Effective Gross Income (after vacancy) − All Operating Expenses
+      </p>
+      <p class="text-gray-600">
+        Operating expenses include taxes, insurance, maintenance, management fees, and utilities.
+        They do <em>not</em> include mortgage payments, depreciation, or income taxes.
+      </p>
+
+      <h3 class="text-lg font-semibold text-gray-800 mt-6">What Is a Good Cap Rate?</h3>
+      <p class="text-gray-600">
+        A "good" cap rate depends on your market, risk tolerance, and investment strategy.
+        In competitive markets like New York City or San Francisco, cap rates of 3–4% are common.
+        In secondary markets in the Midwest or South, 7–9% is achievable.
+      </p>
+      <ul class="text-gray-600 space-y-1 list-disc pl-5">
+        <li><strong>Lower cap rates</strong> typically mean lower risk, slower appreciation markets</li>
+        <li><strong>Higher cap rates</strong> can mean higher returns but also higher risk, deferred maintenance, or weaker tenant demand</li>
+        <li>Most experienced investors target <strong>6–8%</strong> as a balanced range</li>
+      </ul>
+
+      <h3 class="text-lg font-semibold text-gray-800 mt-6">Cap Rate vs. Cash-on-Cash Return</h3>
+      <p class="text-gray-600">
+        Cap rate ignores financing — it's a property-level metric. Cash-on-cash return measures the
+        actual return on the cash you invested (down payment) after debt service. When you use leverage
+        (a mortgage), your cash-on-cash return can be higher or lower than the cap rate depending on
+        your interest rate vs. the cap rate (this is called "positive" or "negative leverage").
+      </p>
+    </article>
+  </div>
+
+  <script>
+    const fmt = (n: number) => '$' + n.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    const fmtPct = (n: number) => n.toFixed(2) + '%';
+
+    const ids = ['cr-value', 'cr-down', 'cr-rent', 'cr-vacancy', 'cr-taxes', 'cr-insurance', 'cr-maintenance', 'cr-mgmt', 'cr-other'];
+    ids.forEach(id => document.getElementById(id)?.addEventListener('input', calculate));
+
+    function calculate() {
+      const propValue = parseFloat((document.getElementById('cr-value') as HTMLInputElement).value) || 0;
+      const downPayment = parseFloat((document.getElementById('cr-down') as HTMLInputElement).value) || 0;
+      const grossRent = parseFloat((document.getElementById('cr-rent') as HTMLInputElement).value) || 0;
+      const vacancyPct = parseFloat((document.getElementById('cr-vacancy') as HTMLInputElement).value) || 0;
+      const taxes = parseFloat((document.getElementById('cr-taxes') as HTMLInputElement).value) || 0;
+      const insurance = parseFloat((document.getElementById('cr-insurance') as HTMLInputElement).value) || 0;
+      const maintenance = parseFloat((document.getElementById('cr-maintenance') as HTMLInputElement).value) || 0;
+      const mgmt = parseFloat((document.getElementById('cr-mgmt') as HTMLInputElement).value) || 0;
+      const other = parseFloat((document.getElementById('cr-other') as HTMLInputElement).value) || 0;
+
+      const effectiveIncome = grossRent * (1 - vacancyPct / 100);
+      const totalExpenses = taxes + insurance + maintenance + mgmt + other;
+      const noi = effectiveIncome - totalExpenses;
+      const capRate = propValue > 0 ? (noi / propValue) * 100 : 0;
+      const coc = downPayment > 0 ? (noi / downPayment) * 100 : 0;
+
+      (document.getElementById('cr-gross-income') as HTMLElement).textContent = fmt(effectiveIncome);
+      (document.getElementById('cr-total-expenses') as HTMLElement).textContent = fmt(totalExpenses);
+      (document.getElementById('cr-noi') as HTMLElement).textContent = fmt(noi);
+      (document.getElementById('cr-cap-rate') as HTMLElement).textContent = fmtPct(capRate);
+      (document.getElementById('cr-coc') as HTMLElement).textContent = fmtPct(coc);
+      (document.getElementById('cr-expense-total') as HTMLElement).textContent = fmt(totalExpenses);
+
+      // Verdict
+      const verdictEl = document.getElementById('cr-cap-verdict') as HTMLElement;
+      if (capRate < 4) verdictEl.textContent = 'Below average — typical for high-demand urban markets';
+      else if (capRate < 6) verdictEl.textContent = 'Moderate return — stable market property';
+      else if (capRate < 8) verdictEl.textContent = 'Good return — solid investment range';
+      else if (capRate < 10) verdictEl.textContent = 'High return — verify market and condition';
+      else verdictEl.textContent = 'Very high — investigate risk factors carefully';
+
+      // Expense list
+      const expenseItems = [
+        { label: 'Property Taxes', value: taxes },
+        { label: 'Insurance', value: insurance },
+        { label: 'Maintenance & Repairs', value: maintenance },
+        { label: 'Property Management', value: mgmt },
+        { label: 'Vacancy Loss', value: grossRent * (vacancyPct / 100) },
+        { label: 'Other', value: other },
+      ];
+
+      const listEl = document.getElementById('cr-expense-list') as HTMLElement;
+      listEl.innerHTML = expenseItems.map(item => `
+        <div class="flex justify-between">
+          <span class="text-gray-500">${item.label}</span>
+          <span class="text-gray-700 font-medium">${fmt(item.value)}</span>
+        </div>
+      `).join('');
+    }
+
+    calculate();
+  </script>
+</Base>

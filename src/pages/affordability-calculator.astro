@@ -1,0 +1,327 @@
+---
+import Base from '../layouts/Base.astro';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Home Affordability Calculator",
+  "url": "https://realtycopilot.app/affordability-calculator/",
+  "description": "Calculate how much house you can afford based on income, debts, and down payment using the 28/36 rule.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+---
+
+<Base
+  title="Home Affordability Calculator — How Much House Can You Afford? | RealtyCopilot"
+  description="Find out how much house you can afford using the 28/36 rule. Enter your income, monthly debts, and down payment to get your maximum home price and DTI ratio instantly."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+
+    <!-- Page header -->
+    <div class="mb-8">
+      <nav class="text-sm text-gray-400 mb-3" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-green-600">Home</a>
+        <span class="mx-2">/</span>
+        <span class="text-gray-600">Affordability Calculator</span>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Home Affordability Calculator</h1>
+      <p class="mt-2 text-gray-500 text-lg">Find out how much house you can afford based on your income and debts.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+
+      <!-- Inputs -->
+      <div class="lg:col-span-2 space-y-5">
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 space-y-5">
+          <h2 class="text-base font-semibold text-gray-700 uppercase tracking-wide">Your Finances</h2>
+
+          <!-- Annual Income -->
+          <div>
+            <label for="af-income" class="block text-sm font-medium text-gray-700 mb-1">Annual Gross Income</label>
+            <div class="relative">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">$</span>
+              <input
+                type="number"
+                id="af-income"
+                value="100000"
+                min="0"
+                step="1000"
+                class="w-full pl-7 pr-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              />
+            </div>
+            <p class="text-xs text-gray-400 mt-1">Combined household income before taxes</p>
+          </div>
+
+          <!-- Monthly Debts -->
+          <div>
+            <label for="af-debts" class="block text-sm font-medium text-gray-700 mb-1">Monthly Debt Payments</label>
+            <div class="relative">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">$</span>
+              <input
+                type="number"
+                id="af-debts"
+                value="500"
+                min="0"
+                step="50"
+                class="w-full pl-7 pr-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              />
+            </div>
+            <p class="text-xs text-gray-400 mt-1">Car loans, student loans, credit cards, etc.</p>
+          </div>
+
+          <!-- Down Payment -->
+          <div>
+            <label for="af-down" class="block text-sm font-medium text-gray-700 mb-1">Down Payment</label>
+            <div class="relative">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">$</span>
+              <input
+                type="number"
+                id="af-down"
+                value="60000"
+                min="0"
+                step="1000"
+                class="w-full pl-7 pr-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              />
+            </div>
+          </div>
+
+          <!-- Interest Rate -->
+          <div>
+            <label for="af-rate" class="block text-sm font-medium text-gray-700 mb-1">Interest Rate</label>
+            <div class="relative">
+              <input
+                type="number"
+                id="af-rate"
+                value="6.75"
+                min="0"
+                max="30"
+                step="0.125"
+                class="w-full pl-4 pr-8 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              />
+              <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">%</span>
+            </div>
+          </div>
+
+          <!-- Loan Term -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Loan Term</label>
+            <div class="grid grid-cols-3 gap-2" role="group" aria-label="Loan term">
+              {['15', '20', '30'].map((yr) => (
+                <button
+                  class="af-term-btn py-2.5 rounded-lg border text-sm font-semibold transition-colors"
+                  data-term={yr}
+                  data-selected={yr === '30' ? 'true' : 'false'}
+                  aria-pressed={yr === '30' ? 'true' : 'false'}
+                >
+                  {yr} yr
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="lg:col-span-3 space-y-5">
+
+        <!-- Max home price hero -->
+        <div class="bg-green-600 rounded-2xl p-6 text-white">
+          <p class="text-sm font-medium text-green-100">Maximum Home Price</p>
+          <p id="af-max-price" class="text-5xl font-extrabold mt-1 tracking-tight">—</p>
+          <p class="text-sm text-green-200 mt-1">Based on the 28/36 rule</p>
+        </div>
+
+        <!-- Metric cards -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white rounded-2xl border border-gray-200 p-5">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Max Monthly Payment</p>
+            <p id="af-max-payment" class="text-2xl font-bold text-gray-900 mt-1">—</p>
+            <p class="text-xs text-gray-400 mt-0.5">P&I only</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-200 p-5">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Front-End DTI</p>
+            <p id="af-front-dti" class="text-2xl font-bold text-gray-900 mt-1">—</p>
+            <p class="text-xs text-gray-400 mt-0.5">Housing / income (max 28%)</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-200 p-5">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Back-End DTI</p>
+            <p id="af-back-dti" class="text-2xl font-bold text-gray-900 mt-1">—</p>
+            <p class="text-xs text-gray-400 mt-0.5">All debts / income (max 36%)</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-200 p-5">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Monthly Income</p>
+            <p id="af-monthly-income" class="text-2xl font-bold text-gray-900 mt-1">—</p>
+            <p class="text-xs text-gray-400 mt-0.5">Gross (before taxes)</p>
+          </div>
+        </div>
+
+        <!-- DTI gauge -->
+        <div class="bg-white rounded-2xl border border-gray-200 p-6">
+          <h2 class="text-sm font-semibold text-gray-700 uppercase tracking-wide mb-4">DTI Breakdown</h2>
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-gray-600">Front-End (housing)</span>
+                <span id="af-front-label" class="font-semibold text-gray-900">—</span>
+              </div>
+              <div class="h-3 bg-gray-100 rounded-full overflow-hidden">
+                <div id="af-front-bar" class="h-full bg-green-500 rounded-full transition-all duration-500" style="width:0%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-gray-600">Back-End (all debts)</span>
+                <span id="af-back-label" class="font-semibold text-gray-900">—</span>
+              </div>
+              <div class="h-3 bg-gray-100 rounded-full overflow-hidden">
+                <div id="af-back-bar" class="h-full bg-green-500 rounded-full transition-all duration-500" style="width:0%"></div>
+              </div>
+            </div>
+          </div>
+          <div id="af-status" class="mt-4 p-3 rounded-lg text-sm font-medium"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Explanation -->
+    <article class="mt-14 prose prose-gray max-w-4xl">
+      <h2 class="text-2xl font-bold text-gray-900">The 28/36 Rule Explained</h2>
+      <p class="text-gray-600">
+        The 28/36 rule is the standard guideline lenders use to determine how much mortgage debt
+        a borrower can safely handle. Most conventional lenders follow these limits when approving loans.
+      </p>
+
+      <h3 class="text-lg font-semibold text-gray-800 mt-6">Front-End Ratio (28%)</h3>
+      <p class="text-gray-600">
+        Your housing costs — including mortgage payment, property taxes, homeowners insurance, and HOA
+        fees — should not exceed <strong>28% of your gross monthly income</strong>. This is called the
+        "front-end" or "housing" ratio. This calculator uses just P&I; add 20–25% to account for PITI.
+      </p>
+
+      <h3 class="text-lg font-semibold text-gray-800 mt-6">Back-End Ratio (36%)</h3>
+      <p class="text-gray-600">
+        All of your monthly debt obligations — housing payment plus car loans, student loans, credit card
+        minimums, and any other recurring debt — should not exceed <strong>36% of your gross monthly
+        income</strong>. This is the "back-end" or "total debt" ratio.
+      </p>
+
+      <h3 class="text-lg font-semibold text-gray-800 mt-6">How to Improve Affordability</h3>
+      <ul class="text-gray-600 space-y-1 list-disc pl-5">
+        <li>Pay down existing debts to lower your back-end DTI</li>
+        <li>Increase your down payment to reduce the loan amount</li>
+        <li>Improve your credit score to qualify for lower interest rates</li>
+        <li>Consider a longer loan term (30 yr) to lower monthly payments</li>
+        <li>Look for homes in lower-cost areas or wait for rates to drop</li>
+      </ul>
+
+      <h3 class="text-lg font-semibold text-gray-800 mt-6">FHA vs. Conventional Limits</h3>
+      <p class="text-gray-600">
+        FHA loans allow higher DTI ratios — up to 31% front-end and 43% back-end — making them
+        accessible to buyers with more debt. However, FHA loans require mortgage insurance premiums (MIP).
+        VA and USDA loans have no strict DTI caps but lenders still evaluate overall creditworthiness.
+      </p>
+    </article>
+  </div>
+
+  <script>
+    const fmt = (n: number) => '$' + n.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    const fmtPct = (n: number) => n.toFixed(1) + '%';
+
+    let afTerm = 30;
+
+    document.querySelectorAll<HTMLButtonElement>('.af-term-btn').forEach(btn => {
+      const isSelected = btn.dataset.selected === 'true';
+      btn.className = `af-term-btn py-2.5 rounded-lg border text-sm font-semibold transition-colors ${
+        isSelected ? 'bg-green-600 text-white border-green-600' : 'bg-white text-gray-700 border-gray-300 hover:border-green-400'
+      }`;
+      btn.addEventListener('click', () => {
+        afTerm = parseInt(btn.dataset.term || '30');
+        document.querySelectorAll<HTMLButtonElement>('.af-term-btn').forEach(b => {
+          const active = b === btn;
+          b.className = `af-term-btn py-2.5 rounded-lg border text-sm font-semibold transition-colors ${
+            active ? 'bg-green-600 text-white border-green-600' : 'bg-white text-gray-700 border-gray-300 hover:border-green-400'
+          }`;
+          b.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+        calculate();
+      });
+    });
+
+    ['af-income', 'af-debts', 'af-down', 'af-rate'].forEach(id => {
+      document.getElementById(id)?.addEventListener('input', calculate);
+    });
+
+    function monthlyPaymentForLoan(loan: number, annualRate: number, years: number): number {
+      const r = annualRate / 100 / 12;
+      const n = years * 12;
+      if (r === 0) return loan / n;
+      return loan * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    }
+
+    function calculate() {
+      const annualIncome = parseFloat((document.getElementById('af-income') as HTMLInputElement).value) || 0;
+      const monthlyDebts = parseFloat((document.getElementById('af-debts') as HTMLInputElement).value) || 0;
+      const downPayment = parseFloat((document.getElementById('af-down') as HTMLInputElement).value) || 0;
+      const annualRate = parseFloat((document.getElementById('af-rate') as HTMLInputElement).value) || 0;
+
+      if (annualIncome <= 0 || annualRate <= 0) return;
+
+      const monthlyIncome = annualIncome / 12;
+
+      // 28/36 rule
+      const maxFrontPayment = monthlyIncome * 0.28;
+      const maxBackPayment = monthlyIncome * 0.36 - monthlyDebts;
+      const maxMonthlyPayment = Math.min(maxFrontPayment, maxBackPayment);
+
+      // Solve for max loan: P = payment * [(1+r)^n - 1] / [r * (1+r)^n]
+      const r = annualRate / 100 / 12;
+      const n = afTerm * 12;
+      const maxLoan = maxMonthlyPayment * (Math.pow(1 + r, n) - 1) / (r * Math.pow(1 + r, n));
+      const maxHomePrice = Math.max(0, maxLoan + downPayment);
+
+      const frontDTI = (maxMonthlyPayment / monthlyIncome) * 100;
+      const backDTI = ((maxMonthlyPayment + monthlyDebts) / monthlyIncome) * 100;
+
+      (document.getElementById('af-max-price') as HTMLElement).textContent = fmt(maxHomePrice);
+      (document.getElementById('af-max-payment') as HTMLElement).textContent = fmt(maxMonthlyPayment);
+      (document.getElementById('af-monthly-income') as HTMLElement).textContent = fmt(monthlyIncome);
+      (document.getElementById('af-front-dti') as HTMLElement).textContent = fmtPct(frontDTI);
+      (document.getElementById('af-back-dti') as HTMLElement).textContent = fmtPct(backDTI);
+
+      // Bars
+      (document.getElementById('af-front-label') as HTMLElement).textContent = fmtPct(frontDTI) + ' / 28%';
+      (document.getElementById('af-back-label') as HTMLElement).textContent = fmtPct(backDTI) + ' / 36%';
+      (document.getElementById('af-front-bar') as HTMLElement).style.width = Math.min(100, (frontDTI / 36) * 100) + '%';
+      (document.getElementById('af-back-bar') as HTMLElement).style.width = Math.min(100, (backDTI / 50) * 100) + '%';
+
+      // Color and status
+      const frontBar = document.getElementById('af-front-bar') as HTMLElement;
+      const backBar = document.getElementById('af-back-bar') as HTMLElement;
+      const statusEl = document.getElementById('af-status') as HTMLElement;
+
+      const overFront = frontDTI > 28;
+      const overBack = backDTI > 36;
+
+      frontBar.className = `h-full rounded-full transition-all duration-500 ${overFront ? 'bg-red-500' : 'bg-green-500'}`;
+      backBar.className = `h-full rounded-full transition-all duration-500 ${overBack ? 'bg-red-500' : 'bg-green-500'}`;
+
+      if (!overFront && !overBack) {
+        statusEl.className = 'mt-4 p-3 rounded-lg text-sm font-medium bg-green-50 text-green-700';
+        statusEl.textContent = 'Your DTI ratios are within conventional lending guidelines.';
+      } else if (overFront || overBack) {
+        statusEl.className = 'mt-4 p-3 rounded-lg text-sm font-medium bg-amber-50 text-amber-700';
+        statusEl.textContent = 'DTI is at maximum. Consider reducing debts or increasing down payment.';
+      }
+    }
+
+    calculate();
+  </script>
+</Base>
