@@ -3,9 +3,10 @@ export interface Props {
   title: string;
   description: string;
   canonical?: string;
+  noindex?: boolean;
 }
 
-const { title, description, canonical } = Astro.props;
+const { title, description, canonical, noindex } = Astro.props;
 const siteUrl = 'https://realtycopilot.app';
 const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
 ---
@@ -27,8 +28,10 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
     <meta name="twitter:description" content={description} />
     <meta name="theme-color" content="#16a34a" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    {noindex && <meta name="robots" content="noindex, follow" />}
   </head>
   <body class="bg-white text-gray-900 min-h-screen flex flex-col">
     <!-- Header -->
@@ -113,7 +116,7 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
             </svg>
             RealtyCopilot.app
           </div>
-          <p class="text-sm">&copy; 2025 RealtyCopilot.app. All rights reserved.</p>
+          <p class="text-sm">&copy; {new Date().getFullYear()} RealtyCopilot.app. All rights reserved.</p>
           <nav class="flex items-center gap-4 text-sm" aria-label="Footer navigation">
             <a href="/privacy/" class="hover:text-white transition-colors">Privacy</a>
             <span aria-hidden="true">|</span>
@@ -136,8 +139,8 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
         btn.setAttribute('aria-expanded', String(!isOpen));
       });
     </script>
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-T1HYTYT5NF"></script>
-    <script>
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-T1HYTYT5NF" is:inline></script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());

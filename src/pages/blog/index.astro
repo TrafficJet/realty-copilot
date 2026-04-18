@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
-<Base title="Real Estate Tips & AI Guides | RealtyC Blog" description="Expert guides on AI tools, mortgage calculators, and real estate strategies.">
+<Base title="Real Estate Tips & AI Guides | RealtyC Blog" description="Expert guides on AI tools, mortgage calculators, and real estate strategies." noindex={posts.length === 0}>
   <div class="max-w-3xl mx-auto">
     <h1 class="text-3xl font-bold mb-2 text-green-800">Real Estate Blog</h1>
     <p class="text-gray-500 mb-10">AI tools, market insights, and guides for real estate professionals.</p>
