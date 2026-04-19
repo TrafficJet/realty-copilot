@@ -7,9 +7,10 @@ export interface Props {
   ogImage?: string;
 }
 
-const { title, description, canonical, noindex } = Astro.props;
+const { title, description, canonical, noindex, ogImage } = Astro.props;
 const siteUrl = 'https://realtycopilot.app';
 const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
+const finalOgImage = ogImage || 'https://realtycopilot.app/og-default.png';
 ---
 
 <!doctype html>
