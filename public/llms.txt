@@ -1,0 +1,10 @@
+# RealtycopilotApp
+
+AI-powered tools and resources for real estate professionals — listing generators, market analysis, and agent productivity tools.
+
+## About
+https://realtycopilot.app/
+
+## Blog
+https://realtycopilot.app/blog/
+https://realtycopilot.app/sitemap.xml
