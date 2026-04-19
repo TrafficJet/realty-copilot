@@ -38,7 +38,10 @@ const finalOgImage = ogImage || 'https://realtycopilot.app/og-default.png';
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
     {noindex && <meta name="robots" content="noindex, follow" />}
-  </head>
+    <script type="application/ld+json" is:inline>
+  {"@context": "https://schema.org", "@type": "WebApplication", "name": "RealtyCopilot — Real Estate AI Calculators", "url": "https://realtycopilot.app/", "description": "AI-powered real estate calculators for agents and buyers. Mortgage, affordability, cap rate, and rental yield calculators.", "applicationCategory": "UtilityApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}
+  </script>
+</head>
   <body class="bg-white text-gray-900 min-h-screen flex flex-col">
     <!-- Header -->
     <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
