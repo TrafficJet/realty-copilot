@@ -4,6 +4,7 @@ export interface Props {
   description: string;
   canonical?: string;
   noindex?: boolean;
+  ogImage?: string;
 }
 
 const { title, description, canonical, noindex } = Astro.props;
@@ -26,6 +27,8 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+  {ogImage && <meta property="og:image" content={ogImage} />}
+  {ogImage && <meta name="twitter:image" content={ogImage} />}
     <meta name="theme-color" content="#16a34a" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
