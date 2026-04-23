@@ -6,6 +6,8 @@ description: "Discover how AI listing description generators save real estate ag
 author: "Alex Morgan"
 tags: ["ai listing description generator"]
 seoTitle: "AI Listing Description Generator for Real Estate | Realty Copilot"
+heroImage: "/images/ai-listing-description-generator/hero.jpg"
+heroImageAlt: "Real estate agent writing property listing description on laptop computer"
 ---
 
 # AI Listing Description Generator for Real Estate
