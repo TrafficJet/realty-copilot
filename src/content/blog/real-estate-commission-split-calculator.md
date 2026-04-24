@@ -6,6 +6,8 @@ description: "Use our real estate commission split calculator to determine your 
 author: "Alex Morgan"
 tags: ["real estate commission split calculator"]
 seoTitle: "Real Estate Commission Split Calculator Guide 2026 | Realty Copilot"
+heroImage: "/images/real-estate-commission-split-calculator/hero.jpg"
+heroImageAlt: "Real estate agent reviewing commission calculations on laptop at desk with documents"
 ---
 
 # Real Estate Commission Split Calculator Guide
