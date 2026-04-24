@@ -6,6 +6,8 @@ description: "Calculate real estate commissions accurately. Learn 2026 rates, NA
 author: "Alex Morgan"
 tags: ["real estate agent commission calculator"]
 seoTitle: "Real Estate Agent Commission Calculator Guide | Realty Copilot"
+heroImage: "/images/real-estate-agent-commission-calculator/hero.jpg"
+heroImageAlt: "Real estate agent using commission calculator on laptop with property sale documents"
 ---
 
 # Real Estate Agent Commission Calculator Guide
