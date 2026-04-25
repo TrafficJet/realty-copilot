@@ -6,6 +6,8 @@ description: "Search MLS listings using plain English instead of filters. Learn 
 author: "Alex Morgan"
 tags: ["natural language mls search"]
 seoTitle: "Natural Language MLS Search: Find Homes by Talking | Realty Copilot"
+heroImage: "/images/natural-language-mls-search/hero.jpg"
+heroImageAlt: "Real estate professional reviewing MLS listings on laptop screen"
 ---
 
 # Natural Language MLS Search: Find Homes by Talking
