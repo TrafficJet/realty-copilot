@@ -6,6 +6,8 @@ description: "Compare top real estate chatbots for agents in 2026. See pricing, 
 author: "Alex Morgan"
 tags: ["real estate chatbot for agents"]
 seoTitle: "Real Estate Chatbot for Agents: Top Picks 2026 | Realty Copilot"
+heroImage: "/images/real-estate-chatbot-for-agents/hero.jpg"
+heroImageAlt: "Real estate agent reviewing chatbot conversations on laptop while managing leads"
 ---
 
 # Real Estate Chatbot for Agents: Top Picks for 2026
