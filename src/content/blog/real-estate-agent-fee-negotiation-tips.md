@@ -6,6 +6,8 @@ description: "Master real estate agent fee negotiation with proven scripts, timi
 author: "Alex Morgan"
 tags: ["real estate agent fee negotiation tips"]
 seoTitle: "Real Estate Agent Fee Negotiation Tips 2026 | Realty Copilot"
+heroImage: "/images/real-estate-agent-fee-negotiation-tips/hero.jpg"
+heroImageAlt: "Real estate agent and client reviewing and negotiating commission contract with documents on table"
 ---
 
 # Real Estate Agent Fee Negotiation Tips That Work
