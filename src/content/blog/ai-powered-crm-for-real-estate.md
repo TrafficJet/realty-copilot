@@ -6,6 +6,8 @@ description: "Compare the best AI-powered CRM platforms for real estate agents i
 author: "Alex Morgan"
 tags: ["ai powered crm for real estate"]
 seoTitle: "AI-Powered CRM for Real Estate: Top Picks 2026 | Realty Copilot"
+heroImage: "/images/ai-powered-crm-for-real-estate/hero.jpg"
+heroImageAlt: "Real estate agent reviewing CRM dashboard with lead information on laptop"
 ---
 
 # AI-Powered CRM for Real Estate: Top Picks for 2026
