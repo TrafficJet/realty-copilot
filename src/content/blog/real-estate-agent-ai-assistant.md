@@ -6,6 +6,8 @@ description: "Discover the best AI assistant tools for real estate agents in 202
 author: "Alex Morgan"
 tags: ["real estate agent ai assistant"]
 seoTitle: "Real Estate Agent AI Assistant: Top Tools for 2026 | Realty Copilot"
+heroImage: "/images/real-estate-agent-ai-assistant/hero.jpg"
+heroImageAlt: "Real estate agent reviewing property listings and client information on laptop"
 ---
 
 # Real Estate Agent AI Assistant: Top Tools for 2026
