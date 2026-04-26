@@ -6,6 +6,8 @@ description: "Compare the best AI property management tools in 2026. Automate te
 author: "Alex Morgan"
 tags: ["ai tools for property management"]
 seoTitle: "AI Tools for Property Management 2026 | Realty Copilot"
+heroImage: "/images/ai-tools-for-property-management/hero.jpg"
+heroImageAlt: "Property manager using tablet to review tenant applications and maintenance requests for apartment building"
 ---
 
 # Best AI Tools for Property Management in 2026
