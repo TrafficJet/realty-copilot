@@ -6,6 +6,8 @@ description: "Understand how the NAR settlement changed buyer agent fees, commis
 author: "Alex Morgan"
 tags: ["nar settlement impact buyer agent fees"]
 seoTitle: "NAR Settlement Impact on Buyer Agent Fees 2026 | Realty Copilot"
+heroImage: "/images/nar-settlement-impact-buyer-agent-fees/hero.jpg"
+heroImageAlt: "Real estate agent and client reviewing and signing a buyer representation agreement at a desk with documents"
 ---
 
 # NAR Settlement: How It Changed Buyer Agent Fees
