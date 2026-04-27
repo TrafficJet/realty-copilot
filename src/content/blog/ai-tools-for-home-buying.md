@@ -6,6 +6,8 @@ description: "Discover the best AI tools for home buying in 2026. Compare Zillow
 author: "Alex Morgan"
 tags: ["ai tools for home buying"]
 seoTitle: "AI Tools for Home Buying 2026 | Best Platforms Compared"
+heroImage: "/images/ai-tools-for-home-buying/hero.jpg"
+heroImageAlt: "Couple sitting together reviewing home listings and mortgage information on a tablet"
 ---
 
 # AI Tools for Home Buying: Best Picks in 2026
