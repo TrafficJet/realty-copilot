@@ -6,6 +6,8 @@ description: "Learn 5 practical steps to use AI tools for setting, benchmarking,
 author: "Alex Morgan"
 tags: ["how to use ai for real estate commission"]
 seoTitle: "How to Use AI for Real Estate Commission in 2026 | Realty Copilot"
+heroImage: "/images/how-to-use-ai-for-real-estate-commission/hero.jpg"
+heroImageAlt: "Real estate agent reviewing commission data and market analysis on laptop"
 ---
 
 # How to Use AI for Real Estate Commission in 2026
