@@ -6,6 +6,8 @@ description: "Discover the best AI home buying software tools for 2026. Compare 
 author: "Alex Morgan"
 tags: ["ai home buying software"]
 seoTitle: "AI Home Buying Software: Top Tools for 2026 | Realty Copilot"
+heroImage: "/images/ai-home-buying-software/hero.jpg"
+heroImageAlt: "Real estate professional reviewing property listings and market data on laptop screen"
 ---
 
 # AI Home Buying Software: Top Tools for 2026
