@@ -6,6 +6,8 @@ description: "Learn how to automate property listings with AI in 2026. Save 40-6
 author: "Alex Morgan"
 tags: ["automate property listing with ai"]
 seoTitle: "Automate Property Listings with AI | 2026 Guide | Realty Copilot"
+heroImage: "/images/automate-property-listing-with-ai/hero.jpg"
+heroImageAlt: "Real estate agent working on property listing details on laptop with MLS data visible"
 ---
 
 # Automate Property Listings with AI: 2026 Guide
