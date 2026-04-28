@@ -6,6 +6,8 @@ description: "Learn how to use ChatGPT for property listings with copy-paste pro
 author: "Alex Morgan"
 tags: ["chatgpt for property listing"]
 seoTitle: "ChatGPT for Property Listings: Write Faster, Sell Faster | Realty Copilot"
+heroImage: "/images/chatgpt-for-property-listing/hero.jpg"
+heroImageAlt: "Real estate agent writing property listing description on laptop with MLS data visible"
 ---
 
 # ChatGPT for Property Listings: Write Faster, Sell Faster
