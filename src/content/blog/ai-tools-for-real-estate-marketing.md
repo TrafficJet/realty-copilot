@@ -6,6 +6,8 @@ description: "72% of agents now use AI for marketing. Discover the best AI tools
 author: "Alex Morgan"
 tags: ["ai tools for real estate marketing"]
 seoTitle: "AI Tools for Real Estate Marketing 2026 | Realty Copilot"
+heroImage: "/images/ai-tools-for-real-estate-marketing/hero.jpg"
+heroImageAlt: "Real estate agent reviewing property listing on laptop computer"
 ---
 
 # AI Tools for Real Estate Marketing in 2026
