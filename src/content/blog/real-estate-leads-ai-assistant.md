@@ -6,6 +6,8 @@ description: "Real estate leads AI assistant software that qualifies, nurtures, 
 author: "Alex Morgan"
 tags: ["real estate leads ai assistant"]
 seoTitle: "Real Estate Leads AI Assistant: Close More Deals in 2026 | Realty Copilot"
+heroImage: "/images/real-estate-leads-ai-assistant/hero.jpg"
+heroImageAlt: "Real estate agent managing multiple leads on laptop and phone simultaneously"
 ---
 
 # Real Estate Leads AI Assistant: Close More Deals in 2026
