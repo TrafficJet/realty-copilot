@@ -6,6 +6,8 @@ description: "Compare 8 AI negotiation tools for real estate agents & investors.
 author: "Alex Morgan"
 tags: ["ai tools for real estate negotiation"]
 seoTitle: "AI Tools for Real Estate Negotiation 2026 | Realty Copilot"
+heroImage: "/images/ai-tools-for-real-estate-negotiation/hero.jpg"
+heroImageAlt: "Real estate agent reviewing contract documents during negotiation meeting"
 ---
 
 # AI Tools for Real Estate Negotiation in 2026
