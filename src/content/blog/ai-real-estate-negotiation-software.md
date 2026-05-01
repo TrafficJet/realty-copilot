@@ -6,6 +6,8 @@ description: "Compare AI negotiation tools for real estate deals. Learn how LLMs
 author: "Alex Morgan"
 tags: ["ai real estate negotiation software"]
 seoTitle: "AI Real Estate Negotiation Software 2026 | Top Platforms & Guide"
+heroImage: "/images/ai-real-estate-negotiation-software/hero.jpg"
+heroImageAlt: "Real estate agent reviewing negotiation terms on laptop during client meeting"
 ---
 
 # AI Real Estate Negotiation Software: 2026 Guide
