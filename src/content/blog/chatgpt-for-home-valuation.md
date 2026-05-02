@@ -6,6 +6,8 @@ description: "Learn what ChatGPT can actually do for home valuation, practical p
 author: "Alex Morgan"
 tags: ["chatgpt for home valuation"]
 seoTitle: "ChatGPT for Home Valuation: What It Can & Can't Do | Realty Copilot"
+heroImage: "/images/chatgpt-for-home-valuation/hero.jpg"
+heroImageAlt: "Homeowner typing address into laptop to research home valuation estimates"
 ---
 
 # ChatGPT for Home Valuation: What It Can & Can't Do
