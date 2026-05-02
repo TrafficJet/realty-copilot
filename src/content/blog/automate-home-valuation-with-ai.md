@@ -6,6 +6,8 @@ description: "Learn how AI-powered AVMs automate home valuation in seconds. Comp
 author: "Alex Morgan"
 tags: ["automate home valuation with ai"]
 seoTitle: "Automate Home Valuation With AI | 2026 Guide - Realty Copilot"
+heroImage: "/images/automate-home-valuation-with-ai/hero.jpg"
+heroImageAlt: "Real estate agent reviewing automated property valuation on laptop screen"
 ---
 
 # Automate Home Valuation With AI: 2026 Guide
