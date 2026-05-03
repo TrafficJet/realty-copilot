@@ -6,6 +6,8 @@ description: "Discover the best AI tools for real estate farming in 2026. Predic
 author: "Alex Morgan"
 tags: ["ai tools for real estate farming"]
 seoTitle: "AI Tools for Real Estate Farming 2026 | Realty Copilot"
+heroImage: "/images/ai-tools-for-real-estate-farming/hero.jpg"
+heroImageAlt: "Real estate agent walking through residential neighborhood with tablet analyzing property data"
 ---
 
 # AI Tools for Real Estate Farming in 2026
