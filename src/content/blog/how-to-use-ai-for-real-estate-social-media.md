@@ -6,6 +6,8 @@ description: "Master AI tools for real estate social media: write captions, crea
 author: "Alex Morgan"
 tags: ["how to use ai for real estate social media"]
 seoTitle: "How to Use AI for Real Estate Social Media in 2026 | Realty Copilot"
+heroImage: "/images/how-to-use-ai-for-real-estate-social-media/hero.jpg"
+heroImageAlt: "Real estate agent creating social media content on laptop and phone with property listings visible"
 ---
 
 # How to Use AI for Real Estate Social Media in 2026
