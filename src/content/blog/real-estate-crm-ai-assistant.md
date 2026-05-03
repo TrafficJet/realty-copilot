@@ -6,6 +6,8 @@ description: "Compare top real estate CRM AI assistants for 2026. See how AI lea
 author: "Alex Morgan"
 tags: ["real estate crm ai assistant"]
 seoTitle: "Real Estate CRM AI Assistant: Top Platforms for 2026 | Realty Copilot"
+heroImage: "/images/real-estate-crm-ai-assistant/hero.jpg"
+heroImageAlt: "Real estate agent reviewing CRM dashboard with lead information on laptop screen"
 ---
 
 # Real Estate CRM AI Assistant: Top Picks for 2026
