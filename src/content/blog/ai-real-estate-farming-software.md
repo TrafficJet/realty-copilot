@@ -6,6 +6,8 @@ description: "Discover the best AI real estate farming software for 2026. Compar
 author: "Alex Morgan"
 tags: ["ai real estate farming software"]
 seoTitle: "AI Real Estate Farming Software: Top Tools for 2026 | Realty Copilot"
+heroImage: "/images/ai-real-estate-farming-software/hero.jpg"
+heroImageAlt: "Real estate agent reviewing property data and analytics on laptop screen"
 ---
 
 # AI Real Estate Farming Software: Top Tools for 2026
