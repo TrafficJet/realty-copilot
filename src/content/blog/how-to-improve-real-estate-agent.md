@@ -6,6 +6,8 @@ description: "Master proven strategies to close more deals and build a scalable 
 author: "Alex Morgan"
 tags: ["how to improve real estate agent"]
 seoTitle: "How to Improve as a Real Estate Agent in 2026 | Realty Copilot"
+heroImage: "/images/how-to-improve-real-estate-agent/hero.jpg"
+heroImageAlt: "Real estate agent presenting home features to interested buyers during property showing"
 ---
 
 # How to Improve as a Real Estate Agent in 2026
