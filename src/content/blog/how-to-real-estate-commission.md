@@ -6,6 +6,8 @@ description: "Learn how real estate commission works, typical rates (2.5%–5%),
 author: "Alex Morgan"
 tags: ["how to real estate commission"]
 seoTitle: "How Real Estate Commission Works in 2026 | Realty Copilot"
+heroImage: "/images/how-to-real-estate-commission/hero.jpg"
+heroImageAlt: "Real estate agent presenting home interior to young couple during property showing"
 ---
 
 # How Real Estate Commission Works in 2026
