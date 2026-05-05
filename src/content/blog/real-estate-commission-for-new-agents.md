@@ -6,6 +6,8 @@ description: "Learn how real estate commission works for new agents, typical spl
 author: "Alex Morgan"
 tags: ["real estate commission for new agents"]
 seoTitle: "Real Estate Commission for New Agents: What to Expect in 2025–2026"
+heroImage: "/images/real-estate-commission-for-new-agents/hero.jpg"
+heroImageAlt: "Real estate agent presenting home details to prospective buyers during showing"
 ---
 
 # Real Estate Commission for New Agents: What to Expect
