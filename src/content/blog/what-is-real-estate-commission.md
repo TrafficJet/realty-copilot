@@ -6,6 +6,8 @@ description: "Real estate commission explained for 2026: rates, who pays, post-N
 author: "Vladislav T."
 tags: ["what is real estate commission"]
 seoTitle: "What Is Real Estate Commission in 2026? | Realty Copilot"
+heroImage: "/images/what-is-real-estate-commission/hero.jpg"
+heroImageAlt: "Real estate agent presenting a home to interested buyers during a showing"
 ---
 
 # What Is Real Estate Commission? 2026 Guide
