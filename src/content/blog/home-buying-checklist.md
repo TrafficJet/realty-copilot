@@ -6,6 +6,8 @@ description: "Master home buying with our detailed checklist covering credit che
 author: "Vladislav T."
 tags: ["home buying checklist"]
 seoTitle: "Home Buying Checklist: Complete Step-by-Step Guide | Realty Copilot"
+heroImage: "/images/home-buying-checklist/hero.jpg"
+heroImageAlt: "Couple reviewing mortgage pre-approval documents and home buying checklist at kitchen table"
 ---
 
 # Home Buying Checklist: Every Step You Need
