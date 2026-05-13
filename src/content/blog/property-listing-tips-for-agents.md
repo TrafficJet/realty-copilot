@@ -6,6 +6,8 @@ description: "Master property listing tips for agents: pricing strategies, profe
 author: "Vladislav T."
 tags: ["property listing tips for agents"]
 seoTitle: "Property Listing Tips for Agents That Win More Deals in 2026"
+heroImage: "/images/property-listing-tips-for-agents/hero.jpg"
+heroImageAlt: "Real estate agent presenting property listing to interested buyers during home tour"
 ---
 
 # Property Listing Tips for Agents That Win More Deals
