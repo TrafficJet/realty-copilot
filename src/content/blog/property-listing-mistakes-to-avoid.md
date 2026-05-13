@@ -6,6 +6,8 @@ description: "Avoid costly property listing mistakes that cost US sellers $10K+.
 author: "Vladislav T."
 tags: ["property listing mistakes to avoid"]
 seoTitle: "Property Listing Mistakes to Avoid in 2026 | Realty Copilot"
+heroImage: "/images/property-listing-mistakes-to-avoid/hero.jpg"
+heroImageAlt: "Real estate agent presenting home listing to prospective buyers during property showing"
 ---
 
 # Property Listing Mistakes to Avoid in 2026
