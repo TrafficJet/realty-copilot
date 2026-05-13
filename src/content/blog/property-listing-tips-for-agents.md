@@ -6,6 +6,8 @@ description: "7 proven listing tips for real estate agents to reduce days on mar
 author: "Vladislav T."
 tags: ["property listing tips for agents"]
 seoTitle: "Property Listing Tips for Agents That Actually Sell | Realty Copilot"
+heroImage: "/images/property-listing-tips-for-agents/hero.jpg"
+heroImageAlt: "Real estate agent presenting a home listing to potential buyers in a modern living room"
 ---
 
 # Property Listing Tips for Agents That Actually Sell
