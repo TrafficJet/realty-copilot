@@ -6,6 +6,8 @@ description: "Master property listing tips to attract buyers and sell faster. Le
 author: "Vladislav T."
 tags: ["property listing tips for agents"]
 seoTitle: "Property Listing Tips for Agents That Close Deals | Realty Copilot"
+heroImage: "/images/property-listing-tips-for-agents/hero.jpg"
+heroImageAlt: "Real estate agent walking through an open house with prospective buyers examining the property"
 ---
 
 # Property Listing Tips for Agents That Close Deals
