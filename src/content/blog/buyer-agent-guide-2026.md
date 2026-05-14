@@ -6,6 +6,8 @@ description: "Complete 2026 buyer agent guide: understand new NAR rules, costs (
 author: "Vladislav T."
 tags: ["buyer agent guide 2026"]
 seoTitle: "Buyer Agent Guide 2026: How to Find & Pay One | Realty Copilot"
+heroImage: "/images/buyer-agent-guide-2026/hero.jpg"
+heroImageAlt: "Buyer's agent presenting a home to an interested couple during a showing"
 ---
 
 # Buyer Agent Guide 2026: Find & Work With One
