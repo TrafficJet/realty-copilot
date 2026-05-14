@@ -6,6 +6,8 @@ description: "Complete guide to becoming a listing agent: licensing, getting fir
 author: "Vladislav T."
 tags: ["how to listing agent"]
 seoTitle: "How to Become a Listing Agent in 2026 | Realty Copilot"
+heroImage: "/images/how-to-listing-agent/hero.jpg"
+heroImageAlt: "Real estate listing agent presenting home features to potential sellers"
 ---
 
 # How to Become a Listing Agent in 2026
