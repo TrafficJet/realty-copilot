@@ -6,6 +6,8 @@ description: "Master buyer consultation, market knowledge, and negotiation skill
 author: "Vladislav T."
 tags: ["how to improve buyer agent"]
 seoTitle: "How to Improve as a Buyer's Agent in 2026 | Realty Copilot"
+heroImage: "/images/how-to-improve-buyer-agent/hero.jpg"
+heroImageAlt: "Buyer's agent presenting a home listing to interested clients during a property showing"
 ---
 
 # How to Improve as a Buyer's Buyer's Agent in 2026
