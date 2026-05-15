@@ -6,6 +6,8 @@ description: "Learn what a listing agent does, how they're paid in 2026, and how
 author: "Vladislav T."
 tags: ["what is listing agent"]
 seoTitle: "What Is a Listing Agent? Complete 2026 Guide | Realty Copilot"
+heroImage: "/images/what-is-listing-agent/hero.jpg"
+heroImageAlt: "Listing agent presenting home features to prospective buyers in bright living room"
 ---
 
 # What Is a Listing Agent? Your Complete 2026 Guide
