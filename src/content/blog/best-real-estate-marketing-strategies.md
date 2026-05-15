@@ -6,6 +6,8 @@ description: "Master AI-powered lead generation, hyperlocal branding, and short-
 author: "Vladislav T."
 tags: ["best real estate marketing strategies"]
 seoTitle: "Best Real Estate Marketing Strategies 2026 | Realty Copilot"
+heroImage: "/images/best-real-estate-marketing-strategies/hero.jpg"
+heroImageAlt: "Real estate agent presenting home interior to interested buyers during property showing"
 ---
 
 # Best Real Estate Marketing Strategies in 2026
