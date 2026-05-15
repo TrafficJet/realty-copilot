@@ -6,6 +6,8 @@ description: "Learn how to land your first listing as a new real estate agent. S
 author: "Vladislav T."
 tags: ["listing agent for new agents"]
 seoTitle: "Listing Agent Guide for New Real Estate Agents | Realty Copilot"
+heroImage: "/images/listing-agent-for-new-agents/hero.jpg"
+heroImageAlt: "Real estate listing agent discussing home sale with homeowner in modern living room"
 ---
 
 # Listing Agent Guide for New Real Estate Agents
